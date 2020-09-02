@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 // Function
 //  - fundamental building block in the program
 //  - subprogram can be usd multiple times
@@ -12,23 +12,23 @@
 //    - function is object in JS
 
 function printHello() {
-  console.log("Hello");
+  console.log('Hello');
 }
 printHello();
 
 function log(message) {
   console.log(message);
 }
-log("Hello!");
+log('Hello!');
 log(1234);
 
 // 2. Parameters
 // - premitive parameters: passd by value
 // - object parameters: passd by reference
 function changeName(obj) {
-  obj.name = "coder";
+  obj.name = 'coder';
 }
-const ellie = { name: "ellie" };
+const ellie = { name: 'ellie' };
 changeName(ellie);
 console.log(ellie);
 
@@ -36,20 +36,20 @@ console.log(ellie);
 function showMessage(message, from) {
   console.log(`${message} by ${from}`);
 }
-showMessage("Hi!");
+showMessage('Hi!');
 
 function showMessage2(message, from) {
   if (from === undefined) {
-    from = "unknown";
+    from = 'unknown';
   }
   console.log(`${message} by ${from}`);
 }
-showMessage2("Hi!");
+showMessage2('Hi!');
 
-function showMessage3(message, from = "unknown") {
+function showMessage3(message, from = 'unknown') {
   console.log(`${message} by ${from}`);
 }
-showMessage3("Hi!");
+showMessage3('Hi!');
 
 //4. Rest parameters (added in ES6)
 function printAll(...args) {
@@ -63,17 +63,17 @@ function printAll(...args) {
 
   args.forEach((arg) => console.log(arg));
 }
-printAll("dream", "coding", "ellie");
+printAll('dream', 'coding', 'ellie');
 
 //5. Local scope
-let globalMessage = "global"; //global variable
+let globalMessage = 'global'; //global variable
 function printMessage() {
-  let message = "hello";
+  let message = 'hello';
   console.log(message); //local variable
   console.log(globalMessage);
   function printAnother() {
     console.log(message);
-    let childMessage = "hello";
+    let childMessage = 'hello';
   }
   // console.log(childMessage); 볼수없음
 }
@@ -116,7 +116,7 @@ function upgradeUser(user) {
 
 const print = function () {
   //anonymous function = 이름없는 함수
-  console.log("print");
+  console.log('print');
 };
 print();
 const printAgain = print;
@@ -126,7 +126,7 @@ console.log(sumAgain(1, 3));
 
 //2. Callback function using function expression
 function randomQuiz(answer, printYes, printNo) {
-  if (answer === "love you") {
+  if (answer === 'love you') {
     printYes();
   } else {
     printNo();
@@ -135,24 +135,24 @@ function randomQuiz(answer, printYes, printNo) {
 
 // anonymous function
 const printYes = function () {
-  console.log("yes!");
+  console.log('yes!');
 };
 // named function
 // better debugging in debugger's stack traces
 // recursions
 const printNo = function print() {
-  console.log("no!");
+  console.log('no!');
 };
-randomQuiz("wrong", printYes, printNo);
-randomQuiz("love you", printYes, printNo);
+randomQuiz('wrong', printYes, printNo);
+randomQuiz('love you', printYes, printNo);
 
 //Arrow function
 // always anonymous
 const simplePrint = function () {
-  console.log("simplePrint!");
+  console.log('simplePrint!');
 };
 
-const simplePrint2 = () => console.log("simplePrint!");
+const simplePrint2 = () => console.log('simplePrint!');
 
 const add = function (a, b) {
   return a + b;
@@ -163,29 +163,47 @@ const add2 = (a, b) => a + b;
 // IIFE : Immediately Invoked Function Expression
 // 함수를 바로 호출하는 ();
 (function hello() {
-  console.log("IIFE");
+  console.log('IIFE');
 });
 
-//Fun quiz time
+//Fun quiz time(지우)
 function calculate(command, a, b) {
   switch (command) {
-    case "add":
+    case 'add':
       console.log(a + b);
       break;
-    case "substract":
+    case 'substract':
       console.log(a - b);
       break;
-    case "divide":
+    case 'divide':
       console.log(a / b);
       break;
-    case "multiply":
+    case 'multiply':
       console.log(a * b);
       break;
-    case "remainder":
+    case 'remainder':
       console.log(a % b);
     default:
-      console.log("?");
+      console.log('?');
       break;
   }
 }
-calculate("add", 8, 2);
+calculate('add', 8, 2);
+
+//Fun quiz time(엘리)
+function calculate(command, a, b) {
+  switch (command) {
+    case 'add':
+      return a + b;
+    case 'substract':
+      return a - b;
+    case 'divide':
+      return a / b;
+    case 'multiply':
+      return a * b;
+    case 'remainder':
+      return a % b;
+    default:
+      throw Error('unkonwn command');
+  }
+}
