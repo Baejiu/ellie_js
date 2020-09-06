@@ -1,12 +1,14 @@
 
 // Q1. make a string out of an array
 {
+  //문제를 잘못이해하고 코드를 고쳤어요...
   const fruits = ['apple', 'banana', 'orange'];
   console.log(fruits);
 }
 
 // Q2. make an array out of a string
 {
+  //문제를 잘못이해하고 코드를 고쳤어요...
   const fruits = ['🍎','🥝','🍌','🍒'];
   console.log(fruits);
 }
@@ -62,6 +64,7 @@ students.forEach((student) => {
 
 // Q6. make an array of enrolled students
 {
+  //문제를 잘못 이해하고 배열에 각자 등록하는 줄 알았어요..
   console.log(students[0]);
   const student1 = {};
   Object.assign(student1, students[0]);
@@ -72,8 +75,6 @@ students.forEach((student) => {
     console.log(makestudent);
   }
   
-
-
 
 }
 
@@ -119,7 +120,7 @@ students.forEach((student) => {
   }
   //MDN...
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
-  console.log(Score.reduce(reducer));
+  console.log(Score.reduce(reducer)/students.length);
 
 }
 
